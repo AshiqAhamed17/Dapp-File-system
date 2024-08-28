@@ -1,11 +1,13 @@
-import { useState } from "react";
 import axios from "axios";
+import { useState } from "react";
 import "./FileUpload.css";
 
 const FileUpload = ({ contract, account, provider }) => {
   const [file, setFile] = useState(null);
   const [fileName, setFileName] = useState("No image selected");
   const [loading, setLoading] = useState(false);
+  //const [result, setResult] = useState();
+  //result = file;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,6 +19,7 @@ const FileUpload = ({ contract, account, provider }) => {
     setLoading(true);
     try {
       console.log("Submitting file:", file); // Debugging line
+      //setResult(result);
 
       const formData = new FormData();
       formData.append("file", file);
@@ -30,8 +33,9 @@ const FileUpload = ({ contract, account, provider }) => {
         formData,
         {
           headers: {
-            pinata_api_key: '61ca5f71e23fdeab174c',
-            pinata_secret_api_key: '1621b84ce599e349c690fa846082ba9b3983767e368a4bba5038368fce5aa6b5',
+            pinata_api_key: "196a82362190c3ca81f7",
+            pinata_secret_api_key:
+              "7f76cdf21f827619461e0ee097be619462e58d438cef850dc3d6962d8bbdd047",
             "Content-Type": "multipart/form-data",
           },
         }
@@ -39,7 +43,9 @@ const FileUpload = ({ contract, account, provider }) => {
 
       const ImgHash = `https://gateway.pinata.cloud/ipfs/${resFile.data.IpfsHash}`;
       console.log("IPFS Hash:", ImgHash); // Debugging line
-
+      contract.add(account, ImgHash);
+      const signer = contract.connect(provider.getSigner());
+      signer.add(account, ImgHash);
       if (contract) {
         const tx = await contract.add(account, ImgHash);
         await tx.wait();
@@ -60,6 +66,7 @@ const FileUpload = ({ contract, account, provider }) => {
 
   const retrieveFile = (e) => {
     const data = e.target.files[0];
+    console.log(`retrieving data ${data}`);
     if (data) {
       setFile(data);
       setFileName(data.name);
@@ -85,6 +92,7 @@ const FileUpload = ({ contract, account, provider }) => {
           {loading ? "Uploading..." : "Upload File"}
         </button>
       </form>
+     
     </div>
   );
 };

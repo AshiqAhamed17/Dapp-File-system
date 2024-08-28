@@ -36,7 +36,7 @@ function App() {
           const address = await signer.getAddress();
           setAccount(address);
 
-          const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS;
+          const contractAddress ='0x5fbdb2315678afecb367f032d93f642f64180aa3';
           if (contractAddress) {
             const contract = new ethers.Contract(
               contractAddress,

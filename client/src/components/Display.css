@@ -1,34 +1,15 @@
-/* Display.css */
-.image-list {
+.image-list-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
-  justify-content: center;
-  padding: 20px;
+  margin-top: 20px;
 }
 
-.image-list img {
-  width: 200px;
-  height: 200px;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-}
-
-.image-list img:hover {
-  transform: scale(1.1);
-}
-
-.address {
-  padding: 10px;
-  width: 300px;
-  border: 2px solid #ff007a;
-  border-radius: 5px;
-  background-color: #1e1e1e;
-  color: #ffffff;
-  margin-bottom: 10px;
-}
-
-.center {
-  display: flex;
-  justify-content: center;
+.image-list {
+  max-width: 200px;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
