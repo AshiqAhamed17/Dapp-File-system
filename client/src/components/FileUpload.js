@@ -58,7 +58,7 @@ const FileUpload = ({ contract, account, provider }) => {
       setFile(null);
     } catch (error) {
       console.error("Error uploading file:", error);
-      alert("Unable to upload image. Please try again.");
+      //alert("Unable to upload image. Please try again.");
     } finally {
       setLoading(false);
     }

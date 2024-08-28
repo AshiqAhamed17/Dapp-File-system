@@ -1,17 +1,20 @@
 /* General Dark Theme */
 body {
-  background-color: #121212;
+  background-color: #97a3d4;
   color: #e0e0e0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
 }
 
-h1, h3, p {
+h1,
+h3,
+p {
   color: #e0e0e0;
 }
 
-input, button {
+input,
+button {
   font-family: inherit;
 }
 
@@ -24,12 +27,14 @@ button:hover {
   transform: scale(1.05);
 }
 
-button:disabled, button[disabled] {
+button:disabled,
+button[disabled] {
   cursor: not-allowed;
   opacity: 0.5;
 }
 
-input[type="text"], input[type="file"] {
+input[type="text"],
+input[type="file"] {
   background-color: #333;
   border: 1px solid #555;
   color: #e0e0e0;
@@ -40,7 +45,8 @@ input[type="text"], input[type="file"] {
   transition: border-color 0.3s;
 }
 
-input[type="text"]:focus, input[type="file"]:focus {
+input[type="text"]:focus,
+input[type="file"]:focus {
   border-color: #1e90ff;
   outline: none;
 }

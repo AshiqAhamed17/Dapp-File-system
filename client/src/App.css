@@ -7,8 +7,8 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #121212;
-  color: #e0e0e0;
+  background-color: linear-gradient(135deg, #504873, #928DAB);
+  color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,47 +19,48 @@ body {
 .main-container {
   position: relative;
   width: 100%;
-  max-width: 800px; /* Adjust width according to your needs */
+  max-width: 900px;
   margin: 20px;
 }
 
 .App {
-  background-color: #1e1e1e;
+  background: #2a2a72;
   border-radius: 15px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
-  padding: 30px;
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.5);
+  padding: 40px;
   width: 100%;
-  max-width: 500px; /* Adjust the width according to your needs */
+  max-width: 600px;
   text-align: center;
-  position: relative; /* To position the "Share" button absolutely */
+  position: relative;
 }
 
 h1.title {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  font-size: 3rem;
+  margin-bottom: 25px;
   color: #ffffff;
-  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
 }
 
 p.account-info {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-  color: #bbbbbb;
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+  color: #d1d1e0;
 }
 
 button {
-  background-color: #1e90ff;
+  background-color: #ff007a;
   color: #ffffff;
   border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
+  border-radius: 25px;
+  padding: 12px 30px;
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0px 10px 20px rgba(255, 0, 122, 0.5);
 }
 
 button:hover {
-  background-color: #1c7ed6;
+  background-color: #e60070;
   transform: scale(1.05);
 }
 
@@ -82,7 +83,7 @@ input[type="file"] {
 }
 
 input[type="file"]:focus {
-  border-color: #1e90ff;
+  border-color: #ff007a;
   outline: none;
 }
 
@@ -119,21 +120,22 @@ input[type="file"]:focus {
 
 /* Share button positioning at the bottom-right */
 .share-button {
-  background-color: #28a745;
+  background-color: #ff007a;
   color: #ffffff;
-  padding: 10px 20px;
+  padding: 12px 30px;
   border: none;
-  border-radius: 5px;
+  border-radius: 25px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
   position: absolute;
-  bottom: 20px; /* Adjust the distance from the bottom */
-  right: 20px; /* Adjust the distance from the right */
-  z-index: 10; /* Ensure the button is on top of other elements */
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+  box-shadow: 0px 10px 20px rgba(255, 0, 122, 0.5);
 }
 
 .share-button:hover {
-  background-color: #218838;
+  background-color: #e60070;
   transform: scale(1.05);
 }
 
