@@ -17,16 +17,21 @@ const FileUpload = ({ contract, account, provider }) => {
     setLoading(true);
     try {
       console.log("Submitting file:", file); // Debugging line
+
       const formData = new FormData();
       formData.append("file", file);
+
+      // Check that the API keys are correctly loaded
+      console.log("API Key:", process.env.REACT_APP_PINATA_API_KEY);
+      console.log("API Secret:", process.env.REACT_APP_PINATA_SECRET_API_KEY);
 
       const resFile = await axios.post(
         "https://api.pinata.cloud/pinning/pinFileToIPFS",
         formData,
         {
           headers: {
-            pinata_api_key: process.env.REACT_APP_PINATA_API_KEY,
-            pinata_secret_api_key: process.env.REACT_APP_PINATA_SECRET_API_KEY,
+            pinata_api_key: '61ca5f71e23fdeab174c',
+            pinata_secret_api_key: '1621b84ce599e349c690fa846082ba9b3983767e368a4bba5038368fce5aa6b5',
             "Content-Type": "multipart/form-data",
           },
         }

@@ -1,10 +1,10 @@
-import Upload from "./artifacts/contracts/Upload.sol/Upload.json";
-import { useState, useEffect } from "react";
 import { ethers } from "ethers";
-import FileUpload from "./components/FileUpload";
-import Display from "./components/Display";
-import Modal from "./components/Modal";
+import { useEffect, useState } from "react";
 import "./App.css";
+import Upload from "./artifacts/contracts/Upload.sol/Upload.json";
+import Display from "./components/Display";
+import FileUpload from "./components/FileUpload";
+import Modal from "./components/Modal";
 
 function App() {
   const [account, setAccount] = useState("");
@@ -38,14 +38,21 @@ function App() {
 
           const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS;
           if (contractAddress) {
-            const contract = new ethers.Contract(contractAddress, Upload.abi, signer);
+            const contract = new ethers.Contract(
+              contractAddress,
+              Upload.abi,
+              signer
+            );
             setContract(contract);
           } else {
             console.error("Contract address is not set");
           }
           setProvider(provider);
         } catch (error) {
-          console.error("Error requesting accounts or initializing contract:", error);
+          console.error(
+            "Error requesting accounts or initializing contract:",
+            error
+          );
         }
       } else {
         console.error("MetaMask is not installed");
@@ -68,30 +75,31 @@ function App() {
 
   return (
     <>
-      {!modalOpen && (
-        <button className="share" onClick={() => setModalOpen(true)}>
-          Share
-        </button>
-      )}
-      {modalOpen && (
-        <Modal setModalOpen={setModalOpen} contract={contract} />
-      )}
+      <div className="main-container">
+        {!modalOpen && (
+          <button className="share-button" onClick={() => setModalOpen(true)}>
+            Share
+          </button>
+        )}
+        {modalOpen && <Modal setModalOpen={setModalOpen} contract={contract} />}
 
-      <div className="App">
-        <h1 style={{ color: "white" }}>Gdrive 3.0</h1>
-        <div className="bg"></div>
-        <div className="bg bg2"></div>
-        <div className="bg bg3"></div>
-
-        <p style={{ color: "white" }}>
-          Account: {account ? account : "Not connected"}
-        </p>
-        <FileUpload
-          account={account}
-          provider={provider}
-          contract={contract}
-        />
-        <Display contract={contract} account={account} />
+        <div className="App">
+          <h1 className="title">Secure-Docs</h1>
+          <div className="background">
+            <div className="bg"></div>
+            <div className="bg bg2"></div>
+            <div className="bg bg3"></div>
+          </div>
+          <p className="account-info">
+            Account: {account ? account : "Not connected"}
+          </p>
+          <FileUpload
+            account={account}
+            provider={provider}
+            contract={contract}
+          />
+          <Display contract={contract} account={account} />
+        </div>
       </div>
     </>
   );
