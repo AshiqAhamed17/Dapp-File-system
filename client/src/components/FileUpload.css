@@ -1,6 +1,6 @@
 .top {
   padding: 20px;
-  background-color: #2a2a72;
+  background-color: #2b2f5a;
   border-radius: 10px;
   box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.5);
 }
@@ -22,7 +22,7 @@
 }
 
 .choose:hover {
-  background-color: #e60070;
+  background-color: #4158ef;
   transform: scale(1.05);
 }
 
@@ -39,12 +39,12 @@
 }
 
 .upload:hover {
-  background-color: #e60070;
+  background-color: #4158ef;
   transform: scale(1.05);
 }
 
 .upload:disabled {
-  background-color: #555;
+  background-color: #59597b;
 }
 
 .textArea {

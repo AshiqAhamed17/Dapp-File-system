@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: linear-gradient(135deg, #504873, #928DAB);
+  background-color: linear-gradient(135deg, #14121f, #ebe9f1);
   color: #ffffff;
   display: flex;
   justify-content: center;
@@ -24,9 +24,9 @@ body {
 }
 
 .App {
-  background: #2a2a72;
+  background: #222840;
   border-radius: 15px;
-  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 15px 30px rgba(255, 255, 255, 1);
   padding: 40px;
   width: 100%;
   max-width: 600px;
@@ -38,7 +38,7 @@ h1.title {
   font-size: 3rem;
   margin-bottom: 25px;
   color: #ffffff;
-  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+  text-shadow: 0px 0px 10px rgba(230, 0, 255, 0.7);
 }
 
 p.account-info {
@@ -50,17 +50,18 @@ p.account-info {
 button {
   background-color: #ff007a;
   color: #ffffff;
+  margin-top: 10px;
   border: none;
   border-radius: 25px;
   padding: 12px 30px;
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0px 10px 20px rgba(255, 0, 122, 0.5);
+  box-shadow: 0px 10px 20px rgb(88, 56, 94, 0.5);
 }
 
 button:hover {
-  background-color: #e60070;
+  background-color: #4158ef;
   transform: scale(1.05);
 }
 
@@ -71,7 +72,7 @@ button:disabled, button[disabled] {
 }
 
 input[type="file"] {
-  background-color: #333;
+  background-color: #100c3a;
   border: 1px solid #555;
   color: #e0e0e0;
   padding: 10px;
@@ -95,7 +96,7 @@ input[type="file"]:focus {
 
 .choose {
   display: block;
-  background-color: #444;
+  background-color: #000000ed;
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 10px;
@@ -128,14 +129,14 @@ input[type="file"]:focus {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
   position: absolute;
-  bottom: 20px;
-  right: 20px;
+  bottom: 38px;
+  right: 60px;
   z-index: 10;
   box-shadow: 0px 10px 20px rgba(255, 0, 122, 0.5);
 }
 
 .share-button:hover {
-  background-color: #e60070;
+  background-color: #4158ef;
   transform: scale(1.05);
 }
 
