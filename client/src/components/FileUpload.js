@@ -25,8 +25,9 @@ const FileUpload = ({ contract, account, provider }) => {
       formData.append("file", file);
 
       // Check that the API keys are correctly loaded
-      console.log("API Key:", process.env.REACT_APP_PINATA_API_KEY);
-      console.log("API Secret:", process.env.REACT_APP_PINATA_SECRET_API_KEY);
+      //console.log("API Key:", process.env.REACT_APP_PINATA_API_KEY);
+      //console.log("API Secret:", process.env.REACT_APP_PINATA_SECRET_API_KEY);
+      console.log('File loaded successfully');
 
       const resFile = await axios.post(
         "https://api.pinata.cloud/pinning/pinFileToIPFS",
